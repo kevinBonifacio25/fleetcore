@@ -23,7 +23,7 @@ services:
       database:
         condition: service_healthy
     environment:
-      PORT: 3000
+      PORT: 3002
       DB_HOST: database
       DB_PORT: 5432
       DB_USERNAME: ${DB_USERNAME:-postgres}
@@ -33,7 +33,7 @@ services:
       JWT_EXPIRES_IN: ${JWT_EXPIRES_IN:-1h}
       API_KEYS: ${API_KEYS:-key1,key2}
     ports:
-      - "${PORT:-3000}:3000"
+      - "${PORT:-3002}:3002"
 
 volumes:
   fleetcore-data:

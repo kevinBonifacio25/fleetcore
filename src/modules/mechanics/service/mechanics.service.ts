@@ -44,6 +44,8 @@ export class MechanicsService {
     return this.mechanics.save(this.mechanics.create(dto));
   }
 
+
+  
   findAll(): Promise<Mechanic[]> {
     return this.mechanics.find({ order: { id: 'ASC' } });
   }

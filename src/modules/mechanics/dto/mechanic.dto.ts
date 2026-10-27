@@ -1,5 +1,5 @@
 /** Validates mechanic fields accepted during creation and partial updates. */
-import { PartialType, ApiProperty } from '@nestjs/swagger';
+import { PartialType, ApiProperty, ApiHideProperty } from '@nestjs/swagger';
 import { IsEmail, IsEnum, IsInt, IsOptional, IsString, MinLength } from 'class-validator';
 import { MechanicStatus } from '../mechanic.entity';
 
@@ -23,6 +23,7 @@ export class CreateMechanicDto {
   @IsEnum(MechanicStatus)
   status?: MechanicStatus;
 
+  @ApiHideProperty()
   @ApiProperty({ required: false })
   @IsOptional()
   @IsInt()
