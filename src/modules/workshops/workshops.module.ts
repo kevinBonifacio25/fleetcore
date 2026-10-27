@@ -1,0 +1,14 @@
+/** Registers the workshop routes and service. */
+import { Module } from '@nestjs/common';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { Workshop } from './workshop.entity';
+import { WorkshopsController } from './workshops.controller';
+import { WorkshopsService } from './service/workshops.service';
+
+@Module({
+  imports: [TypeOrmModule.forFeature([Workshop])],
+  controllers: [WorkshopsController],
+  providers: [WorkshopsService],
+  exports: [WorkshopsService],
+})
+export class WorkshopsModule {}
